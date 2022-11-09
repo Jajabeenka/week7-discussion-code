@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1040146784841",
+    "project_id": "cmsc23-todo-app-jacarranza",
+    "storage_bucket": "cmsc23-todo-app-jacarranza.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040146784841:android:6e2211cef8da03f8235598",
+        "android_client_info": {
+          "package_name": "com.example.week7_networking_discussion"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040146784841-s9h0rpqbbsji9j35u1leif48ep9innh8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8dT9SnyrOzAv2xcVx1JJDA9jf0-37geM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040146784841-s9h0rpqbbsji9j35u1leif48ep9innh8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
