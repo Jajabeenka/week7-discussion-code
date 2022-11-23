@@ -1,28 +1,28 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class FirebaseTodoAPI {
+class FirebaseFriendAPI {
   static final FirebaseFirestore db = FirebaseFirestore.instance;
 
-  Future<String> addTodo(Map<String, dynamic> todo) async {
+  Future<String> addFriend(Map<String, dynamic> friend) async {
     try {
-      final docRef = await db.collection("todos").add(todo);
-      await db.collection("todos").doc(docRef.id).update({'id': docRef.id});
+      final docRef = await db.collection("friends").add(friend);
+      await db.collection("friends").doc(docRef.id).update({'id': docRef.id});
 
-      return "Successfully added todo!";
+      return "Successfully added user data!";
     } on FirebaseException catch (e) {
       return "Failed with error '${e.code}: ${e.message}";
     }
   }
 
-  Stream<QuerySnapshot> getAllTodos() {
-    return db.collection("todos").snapshots();
+  Stream<QuerySnapshot> getAllFriends() {
+    return db.collection("friends").snapshots();
   }
 
-  Future<String> deleteTodo(String? id) async {
+  Future<String> deleteFriend(String? id) async {
     try {
-      await db.collection("todos").doc(id).delete();
+      await db.collection("friends").doc(id).delete();
 
-      return "Successfully deleted todo!";
+      return "Successfully deleted user data!";
     } on FirebaseException catch (e) {
       return "Failed with error '${e.code}: ${e.message}";
     }

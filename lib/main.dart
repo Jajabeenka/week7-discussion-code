@@ -20,7 +20,7 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: ((context) => TodoListProvider())),
+        ChangeNotifierProvider(create: ((context) => FriendListProvider())),
       ],
       child: MyApp(),
     ),
@@ -34,10 +34,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SimpleTodo',
+      title: 'SimpleFriendsList',
       initialRoute: '/',
       routes: {
-        '/': (context) => const TodoPage(),
+        '/': (context) => const FriendPage(),
       },
       theme: ThemeData(
         primarySwatch: Colors.blue,

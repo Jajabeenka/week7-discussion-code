@@ -9,11 +9,11 @@ import 'package:provider/provider.dart';
 import 'package:week7_networking_discussion/models/todo_model.dart';
 import 'package:week7_networking_discussion/providers/todo_provider.dart';
 
-class TodoModal extends StatelessWidget {
+class FriendModal extends StatelessWidget {
   String type;
   TextEditingController _formFieldController = TextEditingController();
 
-  TodoModal({super.key, required this.type});
+  FriendModal({super.key, required this.type});
 
   // Method to show the title of the modal depending on the functionality
   Text _buildTitle() {
@@ -38,7 +38,7 @@ class TodoModal extends StatelessWidget {
       case 'Delete':
         {
           return Text(
-            "Are you sure you want to delete '${context.read<TodoListProvider>().selected.title}'?",
+            "Are you sure you want to delete '${context.read<FriendListProvider>().selected.displayName}'?",
           );
         }
       // Edit and add will have input field in them
@@ -62,12 +62,12 @@ class TodoModal extends StatelessWidget {
           case 'Add':
             {
               // Instantiate a todo objeect to be inserted, default userID will be 1, the id will be the next id in the list
-              Todo temp = Todo(
-                  userId: 1,
-                  completed: false,
-                  title: _formFieldController.text);
+              Friend temp = Friend(
+                  id: 'sampleid1',
+                  friends: null,
+                  displayName: _formFieldController.text);
 
-              context.read<TodoListProvider>().addTodo(temp);
+              context.read<FriendListProvider>().addFriend(temp);
 
               // Remove dialog after adding
               Navigator.of(context).pop();
@@ -85,7 +85,7 @@ class TodoModal extends StatelessWidget {
           //   }
           case 'Delete':
             {
-              context.read<TodoListProvider>().deleteTodo();
+              context.read<FriendListProvider>().deleteFriend();
 
               // Remove dialog after editing
               Navigator.of(context).pop();

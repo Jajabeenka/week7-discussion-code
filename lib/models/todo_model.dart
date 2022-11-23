@@ -1,43 +1,51 @@
 /*
   Created by: Claizel Coubeili Cepe
   Date: 27 October 2022
-  Description: Sample todo app with networking
+  Description: Sample friend app with networking
 */
 
 import 'dart:convert';
+//manipulate model to fit to what is needed
+class Friend {
+  final String id;
+  String? userName;
+  String displayName;
+  List<dynamic>? friends;
+  List<dynamic>? receivedFriendRequests;
+  List<dynamic>? sentFriendRequest;
 
-class Todo {
-  final int userId;
-  String? id;
-  String title;
-  bool completed;
-
-  Todo({
-    required this.userId,
-    this.id,
-    required this.title,
-    required this.completed,
+  Friend({
+    required this.id,
+    this.userName,
+    required this.displayName,
+    this.friends,
+    this.receivedFriendRequests,
+    this.sentFriendRequest,
   });
 
-  factory Todo.fromJson(Map<String, dynamic> json) {
-    return Todo(
-      userId: json['userId'],
+  factory Friend.fromJson(Map<String, dynamic> json) {
+    return Friend(
       id: json['id'],
-      title: json['title'],
-      completed: json['completed'],
+      userName: json['userName'],
+      displayName: json['displayName'],
+      friends: json['friends'],
+      receivedFriendRequests: json['receivedFriendRequests'],
+      sentFriendRequest: json['sentFriendRequests'],
     );
   }
 
-  static List<Todo> fromJsonArray(String jsonData) {
+  static List<Friend> fromJsonArray(String jsonData) {
     final Iterable<dynamic> data = jsonDecode(jsonData);
-    return data.map<Todo>((dynamic d) => Todo.fromJson(d)).toList();
+    return data.map<Friend>((dynamic d) => Friend.fromJson(d)).toList();
   }
 
-  Map<String, dynamic> toJson(Todo todo) {
+  Map<String, dynamic> toJson(Friend friend) {
     return {
-      'userId': todo.userId,
-      'title': todo.title,
-      'completed': todo.completed,
+      'id': friend.id,
+      'displayName': friend.displayName,
+      'friends': friend.friends,
+      'receivedFriendRequests': friend.receivedFriendRequests,
+      'sentFriendRequests': friend.sentFriendRequest,
     };
   }
 }

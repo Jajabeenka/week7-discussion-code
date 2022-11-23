@@ -3,6 +3,8 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -44,40 +46,42 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAmG_VNVgPJK4wKc3kAV0_H1nDjHQ311aw',
-    appId: '1:1040146784841:web:85e15671da8c32f6235598',
-    messagingSenderId: '1040146784841',
-    projectId: 'cmsc23-todo-app-jacarranza',
-    authDomain: 'cmsc23-todo-app-jacarranza.firebaseapp.com',
-    storageBucket: 'cmsc23-todo-app-jacarranza.appspot.com',
-    measurementId: 'G-X67CFV03TK',
+    apiKey: 'AIzaSyDQ-W4Osw1e5DlQW2pOpB6IDfJSxhNPz24',
+    appId: '1:974813067056:web:431c13cae4de254493baf5',
+    messagingSenderId: '974813067056',
+    projectId: 'exercise6-carranza',
+    authDomain: 'exercise6-carranza.firebaseapp.com',
+    storageBucket: 'exercise6-carranza.appspot.com',
+    measurementId: 'G-DKPH317BE1',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA8dT9SnyrOzAv2xcVx1JJDA9jf0-37geM',
-    appId: '1:1040146784841:android:6e2211cef8da03f8235598',
-    messagingSenderId: '1040146784841',
-    projectId: 'cmsc23-todo-app-jacarranza',
-    storageBucket: 'cmsc23-todo-app-jacarranza.appspot.com',
+    apiKey: 'AIzaSyAEEXn97HwkssJ-Tzs-7P30j7AoE8_Lxwo',
+    appId: '1:974813067056:android:beb0750e0a47ee9e93baf5',
+    messagingSenderId: '974813067056',
+    projectId: 'exercise6-carranza',
+    storageBucket: 'exercise6-carranza.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDc9xaXS5l6QbwKRoe0fplvPep-FDgE4uc',
-    appId: '1:1040146784841:ios:9ed3e9e6cefe83a9235598',
-    messagingSenderId: '1040146784841',
-    projectId: 'cmsc23-todo-app-jacarranza',
-    storageBucket: 'cmsc23-todo-app-jacarranza.appspot.com',
-    iosClientId: '1040146784841-2mvertgbgs3b2tdblid9d69dd3tdllqh.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBOawwvA7rDnzLGCcHLkSD2XpdTnT00BqE',
+    appId: '1:974813067056:ios:9574d539ac66016593baf5',
+    messagingSenderId: '974813067056',
+    projectId: 'exercise6-carranza',
+    storageBucket: 'exercise6-carranza.appspot.com',
+    iosClientId: '974813067056-4lsq2qt9kmll6gp881o8hlltvq07meme.apps.googleusercontent.com',
     iosBundleId: 'com.example.week7NetworkingDiscussion',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDc9xaXS5l6QbwKRoe0fplvPep-FDgE4uc',
-    appId: '1:1040146784841:ios:9ed3e9e6cefe83a9235598',
-    messagingSenderId: '1040146784841',
-    projectId: 'cmsc23-todo-app-jacarranza',
-    storageBucket: 'cmsc23-todo-app-jacarranza.appspot.com',
-    iosClientId: '1040146784841-2mvertgbgs3b2tdblid9d69dd3tdllqh.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBOawwvA7rDnzLGCcHLkSD2XpdTnT00BqE',
+    appId: '1:974813067056:ios:9574d539ac66016593baf5',
+    messagingSenderId: '974813067056',
+    projectId: 'exercise6-carranza',
+    storageBucket: 'exercise6-carranza.appspot.com',
+    iosClientId: '974813067056-4lsq2qt9kmll6gp881o8hlltvq07meme.apps.googleusercontent.com',
     iosBundleId: 'com.example.week7NetworkingDiscussion',
   );
 }
+
+

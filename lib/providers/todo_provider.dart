@@ -10,41 +10,41 @@ import 'package:week7_networking_discussion/api/todo_api.dart';
 import 'package:week7_networking_discussion/models/todo_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class TodoListProvider with ChangeNotifier {
-  late FirebaseTodoAPI firebaseService;
-  late Stream<QuerySnapshot> _todosStream;
-  Todo? _selectedTodo;
+class FriendListProvider with ChangeNotifier {
+  late FirebaseFriendAPI firebaseService;
+  late Stream<QuerySnapshot> _friendsStream;
+  Friend? _selectedFriend;
 
-  TodoListProvider() {
-    firebaseService = FirebaseTodoAPI();
-    fetchTodos();
+  FriendListProvider() {
+    firebaseService = FirebaseFriendAPI();
+    fetchFriends();
   }
 
-  Stream<QuerySnapshot> get todos => _todosStream;
-  Todo get selected => _selectedTodo!;
+  Stream<QuerySnapshot> get friends => _friendsStream;
+  Friend get selected => _selectedFriend!;
 
-  changeSelectedTodo(Todo item) {
-    _selectedTodo = item;
+  changeSelectedFriend(Friend item) {
+    _selectedFriend = item;
   }
 
-  fetchTodos() {
-    _todosStream = firebaseService.getAllTodos();
+  fetchFriends() {
+    _friendsStream = firebaseService.getAllFriends();
     notifyListeners();
   }
 
-  void addTodo(Todo item) async {
-    String message = await firebaseService.addTodo(item.toJson(item));
+  void addFriend(Friend item) async {
+    String message = await firebaseService.addFriend(item.toJson(item));
     print(message);
     notifyListeners();
   }
 
-  void editTodo(int index, String newTitle) {
+  void editFriend(int index, String newTitle) {
     // _todoList[index].title = newTitle;
     notifyListeners();
   }
 
-  void deleteTodo() async {
-    String message = await firebaseService.deleteTodo(_selectedTodo!.id);
+  void deleteFriend() async {
+    String message = await firebaseService.deleteFriend(_selectedFriend!.userName);
     print(message);
     notifyListeners();
   }
